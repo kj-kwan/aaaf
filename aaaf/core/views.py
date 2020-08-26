@@ -44,3 +44,15 @@ def support_us():
 @core.route('/festival_info',methods=["GET","POST"])
 def festival_info():
     return render_template('core_pages/festival_info.html')
+
+@core.route('/donation',methods=["GET","POST"])
+def donation():
+    return render_template('core_pages/donation.html')
+
+@core.route('/sponsors',methods=["GET","POST"])
+def sponsors():
+    return render_template('core_pages/sponsors.html')
+
+@core.route('/community_partners',methods=["GET","POST"])
+def community_partners():
+    return render_template('core_pages/community_partners.html')
