@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <!-- <link rel="shortcut icon" href="/static/favicon.ico"> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <a href="/">
+        <div class="banner bg-secondary">
+          <h1>Alberta Asian Arts Festival</h1>
+        </div>
+      </a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">AAAF</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active ml-auto mr-1"><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item dropdown ml-auto mr-1">
+              <a class="nav-link dropdown-toggle ml-auto mr-1" href="#" id="navbarFestival" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Festival
+              </a>
+              <ul class="nav-item dropdown-menu dropdown-menu-right" aria-labelledby="navbarFestival">
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/festival_info">Festival Information</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/events">Annual Events & Programs</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/faqs">FAQs</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown ml-auto mr-1">
+              <a class="nav-link dropdown-toggle ml-auto mr-1" href="#" id="navbarAbout" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About Us
+              </a>
+              <ul class="nav-item dropdown-menu dropdown-menu-right" aria-labelledby="navbarAbout">
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/about">About AAAF</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/our_team">Our Team</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/support_us">Support AAAF</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/contact_us">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="nav-item ml-auto mr-1"><a class="nav-link" href="/blog_posts">Recent News</a></li>
+            <li class="nav-item dropdown ml-auto mr-1">
+              <a class="nav-link dropdown-toggle ml-auto mr-1 bg-light" href="#" id="navbarAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <ul class="nav-item dropdown-menu dropdown-menu-right" aria-labelledby="navbarAccount">
+                {% if current_user.is_authenticated %}
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/account">Profile</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/create_post">Create post</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/logout">Logout</a></li>
+                {% else %}
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/register">Register</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/login">Login</a></li>
+                <!-- <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/create_post">Create post</a></li> -->
+                {% endif %}
+              </ul>
+            </li>
+            <!-- {% if current_user.is_authenticated %}
+              <li class="ml-auto mr-1"><a class="nav-link ml-auto" href="/account">Profile</a></li>
+              <li class="ml-auto mr-1"><a class="nav-link ml-auto" href="/logout">Logout</a></li>
+            {% else %}
+              <li class="ml-auto mr-1"><a class="nav-link ml-auto" href="/register">Register</a></li>
+              <li class="ml-auto mr-1"><a class="nav-link ml-auto" href="/login">Login</a></li>
+              <li class="ml-auto mr-1"><a class="nav-link ml-auto" href="/create_post">Create post</a></li>
+            {% endif %} -->
+          </ul>
+        </div>
+      </nav>
+      <div class="page-content">
+        {% block content %}
+
+        {% endblock %}
+      </div>
+    </div>
+    <footer class="footer mt-5 bg-light">
+        <div class="container py-3">
+          <div class="row footer-body mt-3">
+            <div class="col">
+              <h3>Useful Links</h3>
+              <ul class="nav-item">
+                <li class="footer-links nav-item"><a class="nav-link" href="#">Film Festival Submission</a></li>
+                <li class="footer-links nav-item"><a class="nav-link" href="#">About Us</a></li>
+                <li class="footer-links nav-item"><a class="nav-link" href="/blog_posts">Recent News</a></li>
+                <li class="footer-links nav-item"><a class="nav-link" href="/support_us">Support Us</a></li>
+                <li class="footer-links nav-item"><a class="nav-link" href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>Contact Us</h3>
+              <ul>
+                <li>Email: <a href="#">aaaf.org</a></li>
+                <li>Fax: 403-###-####</li>
+                <li>Address: Calgary, AB</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>Follow Us</h3>
+              <div class="footer-social-buttons">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Youtube</a>
+                <a href="#">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom d-flex justify-content-center py-3  bg-secondary">
+          <p style="color:white ">Copyright 2020 | All Rights Reserved | aaaf.org</p>
+        </div>
+      </footer>
+  </body>
+</html>
