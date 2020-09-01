@@ -9,7 +9,9 @@ core = Blueprint('core', __name__, static_folder='static', static_url_path='/sta
 
 @core.route('/',methods=["GET","POST"])
 def index():
-    return render_template('core_pages/home.html')
+    page = request.args.get('page',1,type=int)
+    blog_posts = BlogPost.query.order_by(BlogPost.date.desc()).paginate(page=page,per_page=3)
+    return render_template('core_pages/home.html', blog_posts=blog_posts)
 
 @core.route('/about',methods=["GET","POST"])
 def about():
@@ -44,6 +46,14 @@ def support_us():
 @core.route('/festival_info',methods=["GET","POST"])
 def festival_info():
     return render_template('core_pages/festival_info.html')
+
+@core.route('/film_festival_info',methods=["GET","POST"])
+def film_festival_info():
+    return render_template('core_pages/film_festival_info.html')
+
+@core.route('/lunar_festival_info',methods=["GET","POST"])
+def lunar_festival_info():
+    return render_template('core_pages/lunar_festival_info.html')
 
 @core.route('/donation',methods=["GET","POST"])
 def donation():

@@ -14,11 +14,11 @@
   <body>
     <div class="page-container">
       <a href="/">
-        <div class="banner bg-secondary">
-          <h1>Alberta Asian Arts Festival</h1>
-        </div>
+        <!-- <div class="banner">
+        </div> -->
+        <!-- <img class="banner" src="/static/Canva - Brown Film.jpg" alt=""> -->
       </a>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="/">AAAF</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,9 @@
                 Festival
               </a>
               <ul class="nav-item dropdown-menu dropdown-menu-right" aria-labelledby="navbarFestival">
-                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/festival_info">Festival Information</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/festival_info">Our Festivals</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/film_festival_info">Film Festival</a></li>
+                <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/lunar_festival_info">Lunar Festival</a></li>
                 <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/events">Annual Events & Programs</a></li>
                 <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/faqs">FAQs</a></li>
                 <li class="nav-item dropdown-item ml-auto mr-1"><a class="nav-link" href="/schedule">Schedule</a></li>
@@ -60,7 +62,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown ml-auto mr-1">
-              <a class="nav-link dropdown-toggle ml-auto mr-1 bg-light" href="#" id="navbarAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle ml-auto mr-1" href="#" id="navbarAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Account
               </a>
               <ul class="nav-item dropdown-menu dropdown-menu-right" aria-labelledby="navbarAccount">
@@ -92,17 +94,17 @@
         {% endblock %}
       </div>
     </div>
-    <footer class="footer mt-5 bg-light">
+    <footer class="footer bg-light">
         <div class="container py-3">
           <div class="row footer-body mt-3">
             <div class="col">
               <h3>Useful Links</h3>
-              <ul class="nav-item">
-                <li class="footer-links nav-item"><a class="nav-link" href="#">Film Festival Submission</a></li>
-                <li class="footer-links nav-item"><a class="nav-link" href="#">About Us</a></li>
-                <li class="footer-links nav-item"><a class="nav-link" href="/blog_posts">Recent News</a></li>
-                <li class="footer-links nav-item"><a class="nav-link" href="/support_us">Support Us</a></li>
-                <li class="footer-links nav-item"><a class="nav-link" href="#">Privacy Policy</a></li>
+              <ul class="nav-item footer-links">
+                <li class=""><a class="footer-links" href="#">Film Festival Submission</a></li>
+                <li class=""><a class="footer-links" href="#">About Us</a></li>
+                <li class=""><a class="footer-links" href="/blog_posts">Recent News</a></li>
+                <li class=""><a class="footer-links" href="/support_us">Support Us</a></li>
+                <li class=""><a class="footer-links" href="#">Privacy Policy</a></li>
               </ul>
             </div>
             <div class="col">
@@ -124,7 +126,7 @@
             </div>
           </div>
         </div>
-        <div class="footer-bottom d-flex justify-content-center py-3  bg-secondary">
+        <div class="footer-bottom d-flex justify-content-center py-3">
           <p style="color:white ">Copyright 2020 | All Rights Reserved | aaaf.org</p>
         </div>
       </footer>

@@ -8,10 +8,10 @@
   {% for post in blog_posts.items %}
     <div class="card">
       <div class="card-body">
-        <h3><a class="card-title" href="{{url_for('/blog_posts.blog_post', blog_post_id=post.id)}}">{{post.title}}</a></h3>
-        <p>By: <a href="{{url_for('users.user_posts',username=post.author.username)}}">{{post.author.username}}</a></p>
+        <h3><a class="card-title text-secondary" href="{{url_for('/blog_posts.blog_post', blog_post_id=post.id)}}">{{post.title}}</a></h3>
+        <p>By: <a class="text-secondary" href="{{url_for('users.user_posts',username=post.author.username)}}">{{post.author.username}}</a></p>
         <p class="card-text">{{post.text[:140]}}{{'...' if post.text|length>140 else ''}}</p>
-        <a class="btn btn-primary" href="{{url_for('/blog_posts.blog_post', blog_post_id=post.id)}}">Read Blog Post</a>
+        <a class="btn btn-sm blog-btn" href="{{url_for('/blog_posts.blog_post', blog_post_id=post.id)}}">Read Blog Post</a>
       </div>
     </div>
   {% endfor %}

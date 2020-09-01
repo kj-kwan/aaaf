@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="jumbotron">
+<div class="jumbotron mt-5">
   <h1>{{ post.title }}</h1>
-  <h2>Written by: {{post.author.username}}</h2>
-  <h3>Published: {{ post.date.strftime('%B %d, %Y') }}</h3>
+  <p>Written by: {{post.author.username}}   |   Published: {{ post.date.strftime('%B %d, %Y') }}</p>
   <p>{{post.text}}</p>
    {% if post.author == current_user %}
      <div>

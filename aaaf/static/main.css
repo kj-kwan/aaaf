@@ -7,9 +7,16 @@ body {
 
 .banner {
   width: 100%;
-  min-height: 7vh;
+  /* height: 10vh; */
+  max-height: 7vh;
+  /* background-image: '/static/Canva - Brown Film.jpg' */
 }
-
+.navbar {
+  background-color: #F3CAC6;
+}
+.dropdown-menu {
+  background-color: #F3CAC6;
+}
 .page-container {
   /* border: 5px solid blue; */
   flex-grow: 1;
@@ -17,16 +24,49 @@ body {
 .page-content {
 
 }
-
 img .carousel {
   width: 100%;
   height: 100%;
 }
-
+.blog-btn {
+  background-color: #cc444b;
+  color: white;
+    /* border: 5px solid red; */
+}
+.jumbotron {
+  background-color: #e4b1ab;
+}
+.sponsor-badge {
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  background-color: #cc444b;
+  padding: 0.5rem;
+  color: white;
+  align-items: center;
+}
+.form-control:focus {
+  border: 1px solid #e4b1ab;
+  box-shadow: 0 0 10px #e4b1ab;
+}
 footer {
   /* border: 5px solid green; */
+  /* background-color: #F3CAC6; */
+  /* background-color: #e4b1ab; */
+  margin-top: 10vh;
 }
-
+.footer-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #e4b1ab;
+}
+.footer-links:hover {
+  color: #cc444b;
+}
+.footer-bottom {
+  /* border: 5px solid red; */
+  background-color: #cc444b;
+}
 .footer-bottom p {
   color: white;
   /* background-color: lightgrey; */
@@ -38,3 +78,16 @@ footer {
   .navbar .nav-item:hover .dropdown-menu{display:block;}
   .navbar .nav-item .dropdown-menu{margin-top:0;}
 }
+
+/* pastel red color palette */
+/* DE6369 */
+/* E07372 */
+/* DF8282 */
+/* F1AFAE */
+/* F3CAC6 */
+
+/* cc444b */
+/* da5552 */
+/* df7373 */
+/* e39695 */
+/* e4b1ab */
